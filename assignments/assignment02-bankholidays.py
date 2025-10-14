@@ -20,17 +20,15 @@ with open("bank_holidays.json", 'w') as fp: # write the data to a file
 # The second dictionary has the keys 'division' and 'events', we want 'events', 
 # we already know the division is Northern Ireland because we selected it in the first step
 
-
-
 print(f"The list of bank holiday in Northern Ireland is as follows:\n")
 
-'''
+# if we just want dates
 for event in data['northern-ireland']['events']: # so we loop through the list of events under 'northern-ireland'
         print(event['date']) # and print out the title and date of each event
 '''
-
+but if we want to print out the title and date of each event, we can do this:
 for event in data['northern-ireland']['events']: # so we loop through the list of events under 'northern-ireland'
         print(f"{event['title']} is on {event['date']}") # and print out the title and date of each event
 
-
+'''
 
