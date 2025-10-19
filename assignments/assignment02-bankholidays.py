@@ -3,6 +3,7 @@ import requests # to download the file from the web
 import json # to handle JSON data
 
 url = "https://www.gov.uk/bank-holidays.json"
+
 response = requests.get(url)
 data=response.json() # this converts the JSON to a Python dictionary
 #print(f"{type(data)}") # to show that it is a dictionary
