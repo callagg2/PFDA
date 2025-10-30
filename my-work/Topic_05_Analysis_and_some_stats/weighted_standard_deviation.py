@@ -1,11 +1,8 @@
-# Calculating the weighted basic descriptive statistics of a dataset using pandas
-# Author: Gerry Callaghan
-# Date: October 2025
+#this looks at calculating the weighted standard deviation of a data set
 
-# we import pandas so we can work with dataframes
 import pandas as pd
-# the following url was retrieved from the CSO under "API Data Query
-# select format as CSV, and then copy the RESTful API link
+import numpy as np  
+
 url = "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/FY006A/CSV/1.0/en"
 
 
@@ -113,4 +110,12 @@ print(f"weighted median of {district} is {median}\n")
 mode = df_analysis[district].idxmax()
 print(f"weighted mode of {district} is {mode}\n")
 
+# Weighted standard deviation
+weighted_mean= np.average(df_analysis.index, weights=df_analysis[district])
+print(f"{weighted_mean}\n")
 
+w_variance = np.average((df_analysis.index - weighted_mean)**2, weights=df_analysis[district])
+print(f"Weighted variance for {district}: {w_variance}\n")
+
+w_stddev = np.sqrt(w_variance)
+print(f"Weighted standard deviation for {district}: {w_stddev}\n")
