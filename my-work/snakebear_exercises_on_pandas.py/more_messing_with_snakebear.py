@@ -49,6 +49,11 @@ print(f"{book_titles.head()}\n")
 # use the string accessor with indexing to get a series
 # containing the second value in the list
 book_authors = book_series_split.str[1]
+
+print(f"{book_authors.value_counts().head()}\n")
+
+print(f"{book_authors.unique()}\n")
+
 print(f"{book_authors.head()}\n")
 
 #check result
