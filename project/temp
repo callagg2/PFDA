@@ -1,47 +1,12 @@
-For this project, I'm going to look at the correlation between residential property prices and costs for building and construction materials.
-
-https://data.gov.ie/dataset/hpm09-residential-property-price-index
-https://data.gov.ie/dataset/wpm28-wholesale-price-index-excl-vat-for-building-and-construction-materials
-
-I will use CSV files - the reason is that they are the simplest to work with
-
-HPM09.20251124175125.csv - Residential_property_price_index
-https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HPM09/CSV/1.0/en
-I've renamed it to - RPPI.csv
-
-
-
-WPM28.20251124175238.csv - Wholesale Price Index (Excl VAT) for Building and Construction Materials 
-https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/WPM28/CSV/1.0/en
-I renamed it to - WPI_BCM.csv
-
-
-Gathering the Data.
-RPPI -
-    - It has monthly data from February 2005 to Sept 2025, 
-      but to be able to regress against WPI&BCM 
-      I will run Sept 2014 to Sept 2014
-    - I will remove all the months February 2005 to August 2014 (or not select to import them)
-
-It also has many categories, so i will filter for National - all residential properties
-I will be taking index data
-I will also ignore all the data talking about the % Change over 12 months for Residential Property Price Index.
-
-WPI-BCM
-only goes up to 202409 from 201501
-so will probably do Sept 14 to Sept 24
-
-I will filter for the entry of Materials, ignoring the figures for every other category
 
 Cleaning the Data
 I will look use the ISNA function to check and replace that i have figures for every entry
 
 Plotting the data, line charts, or indeed regression, 
 this should show the posiitve relationship between both sets of data.
-Explain, how i could not just pick out any one material because i don't know the proportion that goes into the house, though I could guess.
 
 Investigate - there might be a way of seeing if there is a lagging trend.
-Time series data, so need to get the axis working correctly.
+
 
 
 
