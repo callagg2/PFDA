@@ -30,14 +30,15 @@ with open(FULLPATH, 'rt') as fp:
     linecount = 0
     for line in reader:
         #print(f"{(line)}")
-        if not linecount: # first line is the header
+        if not linecount: # first line is the header, this is saying if not a number greater than 0
+            #print(f"value of {linecount} is")
             print(f" {(line)} \n---------")
         else:
             print(f"{(line)}")
 
         linecount += 1
-'''
 
+'''
 '''
 # now to count the ages
 with open(FULLPATH, 'rt') as fp:
@@ -55,7 +56,7 @@ with open(FULLPATH, 'rt') as fp:
 '''
 
 '''
-# now to ccalculate the average age
+# now to calculate the average age
 with open(FULLPATH, 'rt') as fp:
     reader = csv.reader(fp, delimiter=",",quoting=csv.QUOTE_NONNUMERIC)
     total = 0
@@ -85,7 +86,7 @@ with open(FULLPATH, 'rt') as fp:
 
 # how to import JSON from the internet
 # above we have added the import requests to be able to import from the web
-
+'''
 url = "https://www.gov.uk/bank-holidays.json"
 response = requests.get(url)
 data=response.json() # this converts the JSON to a Python dictionary
@@ -103,5 +104,5 @@ with open("bank_holidays.json", 'w') as fp: # write the data to a file
 # then within that, the first event, then within that, 
 # the title and finally the date on which it occurs
 print(f"\nThe first bank holiday in Northern Ireland is: {data['northern-ireland']['events'][0]['title']} on {data['northern-ireland']['events'][0]['date']}")
-
+'''
         
