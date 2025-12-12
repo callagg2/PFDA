@@ -12,8 +12,7 @@ url = "https://www.gov.uk/bank-holidays.json"
 
 response = requests.get(url)
 
-
-data=response.json() # this converts the JSON response file data to a Python dictionary
+data = response.json() # this converts the JSON response file data to a Python dictionary
 #print(f"{type(data)}") # to show that it is a dictionary
 #print(f"{data}") # to show data
 
